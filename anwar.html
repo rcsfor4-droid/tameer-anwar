@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tameer Anwar | Bangladesh's First IFBB PRO | Official Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            --primary-color: #FFC300; /* Gold/Yellow */
+            --secondary-color: #2C3E50; /* Deep Navy Blue */
+            --dark-bg: #1A1A1A; /* Near Black */
+            --light-text: #F4F4F4;
+            --spacing-md: 40px;
+            --spacing-lg: 80px;
+        }
+
+        body {
+            background-color: var(--light-text);
+            color: var(--secondary-color);
+            line-height: 1.6;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            color: var(--dark-bg);
+            margin-bottom: 10px;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: var(--dark-bg);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* --- UPDATED LOGO CONTAINER STYLE --- */
+        .logo {
+            font-size: 1.6em;
+            font-weight: 800;
+            color: var(--primary-color);
+            /* Important for aligning the image and text */
+            display: flex; 
+            align-items: center; 
+        }
+
+        /* --- LOGO IMAGE STYLE (Height adjusted to 35px for a subtle increase) --- */
+        .logo-img {
+            height: 35px; /* Slightly increased height */
+            margin-right: 10px; /* Spacing between logo and text */
+            /* This next line helps in aligning the image vertically with the text */
+            filter: drop-shadow(0 0 5px rgba(255, 195, 0, 0.7)); 
+        }
+
+        .navbar ul {
+            list-style: none;
+        }
+
+        .navbar ul li {
+            display: inline;
+            margin-left: 30px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .navbar ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section - MODIFIED FOR IMAGE ON RIGHT WITH SHADOW ON LEFT */
+        .hero-section {
+            /* CORRECTED IMAGE PATH */
+            background: 
+                linear-gradient(to right, 
+                                rgba(0, 0, 0, 0.8) 0%, /* Darkest on the left for text */
+                                rgba(0, 0, 0, 0.6) 40%, /* Medium opacity in the middle */
+                                rgba(0, 0, 0, 0.1) 80%, /* Fades out towards the right, revealing more of the image */
+                                rgba(0, 0, 0, 0.0) 100%), /* Fully transparent on the far right */
+                url('cap.jpg') no-repeat center right/cover; /* Image positioned to the right */
+            height: 90vh;
+            display: flex;
+            justify-content: flex-start; /* Align content to the left */
+            align-items: center;
+            text-align: left; /* Align text to the left */
+            padding-left: 5%; /* Add padding on the left for content */
+        }
+
+        .hero-content {
+            padding: 20px;
+            color: var(--light-text);
+            max-width: 600px; /* Constrain content width for better readability */
+        }
+
+        .hero-content h1 {
+            font-size: 5em;
+            margin-bottom: 0;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .hero-content h2 {
+            font-size: 2.2em;
+            font-weight: 300;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        /* General Section Styles */
+        .section {
+            padding: var(--spacing-lg) 5%;
+            text-align: center;
+        }
+
+        .section h3 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: var(--dark-bg);
+        }
+
+        .section-subtitle {
+            font-size: 1.1em;
+            margin-bottom: var(--spacing-md);
+            color: #666;
+        }
+
+        /* Achievement Grid */
+        .achievement-grid {
+            display: flex;
+            justify-content: space-around;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .achievement-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            flex-basis: 30%;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 5px solid var(--primary-color);
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .achievement-card h4 {
+            font-size: 1.6em;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+
+        .achievement-card .year {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        /* CTA Buttons */
+        .cta-button {
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-top: 25px;
+            transition: all 0.3s;
+        }
+
+        .primary-cta {
+            background-color: var(--primary-color);
+            color: var(--dark-bg);
+            border: 2px solid var(--primary-color);
+        }
+
+        .primary-cta:hover {
+            background-color: white;
+            color: var(--dark-bg);
+            border-color: white;
+        }
+
+        .secondary-cta {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .secondary-cta:hover {
+            background-color: var(--primary-color);
+            color: var(--dark-bg);
+        }
+
+        .read-more {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 30px;
+            border-bottom: 2px dotted var(--secondary-color);
+        }
+
+        /* --- GALLERY STYLES --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 columns */
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px; /* Fixed height for uniformity */
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Modal/Lightbox Styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 2000; 
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 900px;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        @keyframes zoom {
+            from {transform:scale(0)} 
+            to {transform:scale(1)}
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        /* --- END GALLERY STYLES --- */
+
+        /* --- CONTACT/COACHING SECTION STYLES (Improved Section) --- */
+        .contact-coaching {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: var(--spacing-lg) 5%;
+            text-align: center;
+        }
+
+        .contact-coaching h3 {
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .contact-coaching p {
+            font-size: 1.2em;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        /* New Form Styles */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .contact-form input[type="text"], 
+        .contact-form input[type="email"], 
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #3C5065; /* Slightly lighter navy for input fields */
+            color: var(--light-text);
+            font-size: 1em;
+        }
+        
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: var(--light-text);
+        }
+
+        .contact-form .submit-button {
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+        
+        .contact-coaching a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-coaching a:hover {
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--dark-bg);
+            color: #aaa;
+            padding: var(--spacing-md) 5%;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #333;
+            /* Added space for the new button if it was inline, but here it's below */
+        }
+
+        .footer h4 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        /* --- UPDATED SOCIAL LINKS STYLES --- */
+        .social-links {
+            text-align: right;
+        }
+        
+        .social-links a {
+            /* Button Look & Spacing */
+            display: inline-block;
+            padding: 8px 15px;
+            margin-right: 10px; 
+            margin-bottom: 10px;
+            border-radius: 5px;
+            
+            /* Base Colors & Text */
+            background-color: #333; 
+            color: var(--light-text);
+            text-decoration: none;
+            font-weight: 600;
+
+            /* Transition for smooth effects */
+            transition: all 0.3s ease;
+            
+            /* Initial Shadow */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+        }
+
+        .social-links a:hover {
+            /* Hover Effects (Animation, Transition, Shadow) */
+            background-color: var(--primary-color); /* Gold background on hover */
+            color: var(--dark-bg); /* Dark text for contrast */
+            transform: translateY(-2px) scale(1.05); /* Slight lift and scale */
+            box-shadow: 0 5px 15px rgba(255, 195, 0, 0.6); /* Prominent gold shadow */
+        }
+        /* --- END UPDATED SOCIAL LINKS STYLES --- */
+
+        /* --- DEVELOPER BUTTON STYLES --- */
+        .developer-button-container {
+            text-align: center;
+            padding: 20px 0 10px 0;
+        }
+
+        .developer-button {
+            background-color: #333;
+            color: var(--light-text);
+            padding: 10px 20px;
+            border: 2px solid #555;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .developer-button:hover {
+            background-color: var(--primary-color);
+            color: var(--dark-bg);
+            border-color: var(--primary-color);
+            transform: scale(1.05) translateY(-2px);
+            box-shadow: 0 6px 12px rgba(255, 195, 0, 0.5);
+            /* Add a subtle pulsing animation effect on hover */
+            animation: pulse-shadow 1s infinite alternate;
+        }
+        
+        @keyframes pulse-shadow {
+            from { box-shadow: 0 6px 12px rgba(255, 195, 0, 0.5); }
+            to { box-shadow: 8px 16px rgba(255, 195, 0, 0.7); }
+        }
+
+        /* --- END DEVELOPER BUTTON STYLES --- */
+
+        .copyright {
+            text-align: center;
+            padding-top: 15px;
+            font-size: 0.85em;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <img src="logo tameer.png" alt="Tameer Anwar Pro Logo" class="logo-img">
+            TAMEER ANWAR PRO
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#pro-profile">Pro Profile</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact & Coaching</a></li> 
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h1>TAMEER ANWAR</h1>
+            <h2>Bangladesh's First **IFBB PRO Card** Holder.</h2>
+            <p>6-Time Mr. Bangladesh Champion & Senior Head Trainer at Gold's Gym.</p>
+            <a href="#contact" class="cta-button primary-cta">START YOUR PRO TRANSFORMATION</a>
+        </div>
+    </section>
+
+    <section id="pro-profile" class="section achievements-section">
+        <h3>🏆 Forging a Legacy</h3>
+        <p class="section-subtitle">A career built on discipline, dedication, and historic firsts.</p>
+        
+        <div class="achievement-grid">
+            <div class="achievement-card">
+                <h4>IFBB PRO Status</h4>
+                <p class="year">2022</p>
+                <p>Secured the IFBB Pro Card, making history for Bangladesh.</p>
+            </div>
+            <div class="achievement-card">
+                <h4>6x Mr. Bangladesh</h4>
+                <p class="year">2014, '15, '16, '19, '20, '21</p>
+                <p>Unmatched national dominance and consistent champion performance.</p>
+            </div>
+            <div class="achievement-card">
+                <h4>Asian Silver Medal</h4>
+                <p class="year">2019</p>
+                <p>International recognition at the Asian Bodybuilding and Fitness Championships.</p>
+            </div>
+        </div>
+        <a href="profile.html" class="read-more">View Full Professional Profile →</a>
+    </section>
+
+    <section id="gallery" class="section gallery-section">
+        <h3>📸 Pro Gallery: The Journey in Photos</h3>
+        <p class="section-subtitle">Witness the stage highlights, intense training, and defining moments of the journey.</p>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="openModal('on stage.jpg')"><img src="onstage.jpg" alt="Stage Pose 1"></div>
+            <div class="gallery-item" onclick="openModal('workout.jpg')"><img src="workout.jpg" alt="Training Session"></div>
+            <div class="gallery-item" onclick="openModal('11st ifbb.jpg')"><img src="tameer.jpg.jpg" alt="IFBB Pro Win"></div>
+            <div class="gallery-item" onclick="openModal('tameer.jpg.jpg')"><img src="11st ifbb.jpg" alt="Photoshoot"></div>
+            <div class="gallery-item" onclick="openModal('mrbd.jpg')"><img src="mrbd.jpg" alt="Mr. Bangladesh"></div>
+            <div class="gallery-item" onclick="openModal('backstage.jpg')"><img src="backstage.jpg" alt="Backstage"></div>
+            <div class="gallery-item" onclick="openModal('COACH.jpg')"><img src="COACH.jpg.jpg" alt="Gym Workout"></div>
+            <div class="gallery-item" onclick="openModal('cap.jpg')"><img src="cap.jpg" alt="Inspiration"></div>
+            </div>
+    </section>
+    
+    <div id="imageModal" class="modal" onclick="closeModal()">
+      <span class="close" title="Close Modal">&times;</span>
+      <img class="modal-content" id="fullImage">
+    </div>
+
+    <section id="contact" class="contact-coaching">
+        <div class="contact-content">
+            <h3>Start Your Champion's Journey</h3>
+            <p>Whether you're looking for world-class coaching or have a business inquiry, reach out directly. **Your goals are my priority.**</p>
+            
+            <div class="contact-form">
+                <form id="contactForm" onsubmit="return handleFormSubmission(event)">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                    
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required placeholder="example@email.com">
+
+                    <label for="subject">I am interested in...</label>
+                    <input type="text" id="subject" name="subject" placeholder="Online Coaching, Sponsorship, Event Booking, etc.">
+                    
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" required placeholder="Tell me about your fitness goals or inquiry details."></textarea>
+                    
+                    <button type="submit" class="cta-button primary-cta submit-button">SEND MESSAGE</button>
+                </form>
+            </div>
+            
+            <div style="margin-top: 50px;">
+                <p style="font-size: 1em;">**Direct Inquiries**</p>
+                <p>📧 <a href="mailto:tameer.anwar316@gmail.com">tameer.anwar316@gmail.com</a></p>
+                <p>📍 Training at Gold's Gym Bangladesh</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <h4>Tameer Anwar PRO</h4>
+                <p>Bangladesh's First IFBB Professional Bodybuilder.</p>
+            </div>
+            <div class="social-links">
+                <h4>Follow My Journey</h4>
+                <a href="https://www.instagram.com/tameeranwar?igsh=MW1mZWYxbmw3c3d1dw==" class="social-icon">Instagram</a>
+                <a href="https://www.facebook.com/share/1EEPaVNnJ1/" class="social-icon">Facebook</a>
+                <a href="https://youtube.com/@tameeranwar8454?si=1rZCcSiAUEC7mjqt" class="social-icon">YouTube</a>
+            </div>
+        </div>
+        
+        <div class="developer-button-container">
+            <a href="https://rcsfor4-droid.github.io/about-raja/" target="_blank" class="developer-button">
+                💻 Meet The Developer (Raja)
+            </a>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Rakibul Islam Raja. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function openModal(imageSrc) {
+            var modal = document.getElementById("imageModal");
+            var modalImg = document.getElementById("fullImage");
+            
+            modalImg.src = imageSrc; 
+            modal.style.display = "block";
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("imageModal");
+            modal.style.display = "none";
+        }
+
+        // Close the modal if the user clicks anywhere outside the image
+        var modal = document.getElementById('imageModal');
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        
+        // --- NEW JAVASCRIPT FUNCTION FOR EMAIL SUBMISSION ---
+        function handleFormSubmission(event) {
+            event.preventDefault(); // Stops the default form submission (which would normally fail)
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            // Recipient's Email Address
+            const recipient = 'taneer.anwar316@gmail.com'; 
+            
+            // Construct the email subject
+            const emailSubject = encodeURIComponent(`Website Inquiry: ${subject || 'General Contact'}`);
+            
+            // Construct the email body using URI encoding for proper formatting and newlines (\n)
+            const emailBody = encodeURIComponent(
+                `A new contact request has been submitted from the Tameer Anwar PRO website.\n\n` +
+                `Sender Name: ${name}\n` +
+                `Sender Email: ${email}\n` +
+                `Interested In: ${subject || 'N/A'}\n\n` +
+                `--- Message ---\n` +
+                `${message}`
+            );
+
+            const mailtoLink = `mailto:${recipient}?subject=${emailSubject}&body=${emailBody}`;
+
+            // Redirect the user to the mailto link, which opens their email client
+            window.location.href = mailtoLink;
+
+            // Show a reminder to the user
+            setTimeout(() => {
+                alert("আপনার ইমেল ক্লায়েন্ট এখন খুলবে। অনুগ্রহ করে নিশ্চিত করুন যে আপনি 'Send' বাটনে ক্লিক করেছেন।");
+            }, 500);
+
+            return false; // Prevent traditional form submission
+        }
+        // --- END NEW JAVASCRIPT FUNCTION ---
+    </script>
+
+</body>
+</html>
